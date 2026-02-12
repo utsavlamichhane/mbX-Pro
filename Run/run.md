@@ -1,3 +1,5 @@
+This is the entire run if you have all the assumption (as mentioned in the readme file) met.
+
 ```{bash}
 #Download SRR fastqs into data/fastq/
 

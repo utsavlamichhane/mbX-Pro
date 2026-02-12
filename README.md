@@ -35,7 +35,7 @@ These are *defaults* in the scripts (edit via CLI flags or by editing the script
 ```
 .
 ├── config/
-│   └── srr_ids.txt                 # (you create) SRR accessions, one per line
+│   └── srr_ids.txt                 ###IMP: you need to manually give the ids in the file, one id (like SRR31972796) in each line
 ├── scripts/
 │   ├── 01_download_fastq_ncbi.sh
 │   ├── 02_make_manifest.R
@@ -50,7 +50,7 @@ These are *defaults* in the scripts (edit via CLI flags or by editing the script
 
 ---
 
-## Quickstart (recommended order)
+## Quickstart (Please use this order, similar to what we did in our video)
 
 ### 0) Put your SRR accessions in a file
 
@@ -63,7 +63,6 @@ SRR31972798
 SRR31972799
 ```
 
-(Those are just example SRRs from the cheatsheet you attached.)
 
 ---
 

@@ -1,4 +1,4 @@
-"""{bash}
+```{bash}
 #Download SRR fastqs into data/fastq/
 
 bash scripts/01_download_fastq_ncbi.sh --srr_list config/srr_ids.txt --out_dir data/fastq --rename_casava
@@ -37,4 +37,4 @@ bash scripts/06_diversity.sh \
 Rscript scripts/07_ancombc.R --microbiome level-7.csv --metadata metadata.txt --group_var BMIClass --out_dir ancombc_out
 Rscript scripts/08_maaslin2.R --microbiome level-7.csv --metadata metadata.txt --group_var BMIClass --out_dir maaslin2_out
 
-"""
+```

@@ -23,9 +23,9 @@ These are *defaults* in the scripts (edit via CLI flags or by editing the script
   - `--p-trim-left-f 18`
   - `--p-trim-left-r 22`
 - Taxonomic table exports:
-  - `level-5.csv` = QIIME 2 **taxonomic level 5** (often Family in Greengenes/SILVA-style lineages)
-  - `level-6.csv` = level 6 (often Genus)
-  - `level-7.csv` = level 7 (often Species)
+  - `level-5.csv` = QIIME 2 **taxonomic level 5** (Family in Greengenes/SILVA)
+  - `level-6.csv` = level 6 (Genus)
+  - `level-7.csv` = level 7 (Species)
 - A **pre-trained classifier artifact** exists (e.g. `classifier.qza`) and matches your amplicon region/primers.
 
 ---
@@ -139,11 +139,12 @@ And the script also copies `level-5.csv/6/7` into the **repo root** for downstre
 
 ### 5) Run mbX (clean / viz / stats) on level-7.csv
 
-This always uses `level-7.csv`. The script auto-detects the taxonomy rank marker in the table (e.g., `g__`, `s__`) to set `level` for mbX. See mbX vignette.
+This always uses `level-7.csv`. 
 
 ```bash
 Rscript scripts/05_run_mbx.R \
   --microbiome level-7.csv \
+  --level g
   --metadata metadata.txt \
   --group_var BMIClass \
   --top_taxa 10
@@ -155,7 +156,7 @@ Output: `mbx_out/` with cleaned tables, plots, and stats (plus `sessionInfo.txt`
 
 ### 6) Alpha & Beta diversity (to a separate directory)
 
-This step requires a **sampling depth** (do NOT guess—choose based on your rarefaction / table summary).
+This step requires a **sampling depth**
 
 ```bash
 bash scripts/06_diversity.sh \
@@ -166,7 +167,7 @@ bash scripts/06_diversity.sh \
   --out_dir diversity_out
 ```
 
-Outputs: `diversity_out/` (core metrics, alpha, beta distance matrices, PCoA, etc.)
+Outputs: `diversity_out/` (core metrics, alpha, beta distance matrices, PCoA)
 
 ---
 
